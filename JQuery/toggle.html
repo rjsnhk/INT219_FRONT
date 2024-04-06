@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .highlight{
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h2>List items</h2>
+  <ul id="list">
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3</li>
+  </ul>
+  <button id="addbtn">Add class to odd items</button>
+  <button id="toggle">Togle for even</button>
+  <button id="remove">Remove all item</button>
+  <script>
+    $(document).ready(function(){
+      $("#addbtn").click(function(){
+        $("#list li:odd").addClass("highlight");
+      });
+      $("#toggle").click(function() {
+        $("#list li:even").toggleClass('highlight');
+      });
+      $("#remove").click(function () {
+        $("#list").empty();
+    });
+    });
+  </script>
+</body>
+</html>
